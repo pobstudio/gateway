@@ -9,19 +9,14 @@
     "resolveJsonModule": true,
     "pretty": true,
     "skipLibCheck": true,
-    "typeRoots": [
-      "node_modules/@0x/typescript-typings/types",
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "strict": true,
     // These settings are required for TypeScript project references
-    "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "esModuleInterop": true
   },
   "include": [],
-  "references": [
-    {"path": "./sketches"},
-  ]
+  "references": [{ "path": "./sketches" }, { "path": "./protocol" }]
 }

@@ -1,0 +1,58 @@
+{
+  "0x7a250d5630b4cf539739df2c5dacb4c659f2488d": {
+    "name": "Uniswap Router",
+    "colors": ["#FF007A", "#000000", "#FFB8DA", "#FFFFFF"]
+  },
+  "0x090d4613473dee047c3f2706764f49e0821d256e": {
+    "name": "Uniswap Token Distributor",
+    "colors": ["#FF007A", "#000000", "#FFB8DA", "#FFFFFF"]
+  },
+  "0xa26e80e7dea86279c6d778d702cc413e6cffa777": {
+    "name": "0x Staking Proxy",
+    "colors": ["#000000", "#A2F5EB", "#00AE99", "#003831"]
+  },
+  "0xa3ac9844514b96bb502627ca9dceb57c4be289e3": {
+    "name": "0x Forwarder",
+    "colors": ["#000000", "#A2F5EB", "#00AE99", "#003831"]
+  },
+  "0x61935cbdd02287b511119ddb11aeb42f1593b7ef": {
+    "name": "0x v3",
+    "colors": ["#000000", "#A2F5EB", "#00AE99", "#003831"]
+  },
+  "0x080bf510fcbf18b91105470639e9561022937712": {
+    "name": "0x v2.1",
+    "colors": ["#000000", "#A2F5EB", "#00AE99", "#003831"]
+  },
+  "0xdef1c0ded9bec7f1a1670819833240f027b25eff": {
+    "name": "0x Exchange Proxy",
+    "colors": ["#000000", "#A2F5EB", "#00AE99", "#003831"]
+  },
+  "0x38a795580d0f687e399913a00ddef6a17612c722": {
+    "name": "0x Coordinator",
+    "colors": ["#000000", "#A2F5EB", "#00AE99", "#003831"]
+  },
+  "0xf73b31c07e3f8ea8f7c59ac58ed1f878708c8a76": {
+    "name": "Sushiswap Dev Fund",
+    "colors": ["#FEF8EF", "#EFE9E7", "#563B29", "#DC3045"]
+  },
+  "0xc2edad668740f1aa35e4d8f227fb8e17dca888cd": {
+    "name": "Sushiswap Router",
+    "colors": ["#FEF8EF", "#EFE9E7", "#563B29", "#DC3045"]
+  },
+  "0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f": {
+    "name": "Sushiswap Router",
+    "colors": ["#FEF8EF", "#EFE9E7", "#563B29", "#DC3045"]
+  },
+  "0x3fda67f7583380e67ef93072294a7fac882fd7e7": {
+    "name": "Compound finance",
+    "colors": ["#60CF99", "#080A0E", "#161E26", "#FFFFFF"]
+  },
+  "0x3d9819210a31b4961b30ef54be2aed79b9c9cd3b": {
+    "name": "Compound finance",
+    "colors": ["#60CF99", "#080A0E", "#161E26", "#FFFFFF"]
+  },
+  "0x1055be4bf7338c7606d9efdcf80593f180ba043e": {
+    "name": "Compound finance",
+    "colors": ["#60CF99", "#080A0E", "#161E26", "#FFFFFF"]
+  }
+}

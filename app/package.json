@@ -1,0 +1,45 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "convert:CID": "ts-node --project ./scripts/tsconfig.json ./scripts/convertCID.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ethersproject/providers": "^5.0.17",
+    "@pob/protocol": "1.0.0",
+    "@pob/sketches": "1.0.0",
+    "@reach/listbox": "^0.12.1",
+    "@reach/tooltip": "^0.12.1",
+    "@welldone-software/why-did-you-render": "^6.0.5",
+    "ethers": "^5.0.24",
+    "graphql": "^15.4.0",
+    "immer": "^8.0.0",
+    "next": "^10.0.1",
+    "next-seo": "^4.17.0",
+    "next-transpile-modules": "^6.0.0",
+    "query-string": "^6.13.8",
+    "react": "^17.0.1",
+    "react-device-detect": "^1.14.0",
+    "react-dom": "^17.0.1",
+    "react-spring": "^8.0.27",
+    "react-use": "^15.3.4",
+    "react-use-measure": "^2.0.3",
+    "styled-components": "^5.2.1",
+    "swr": "^0.3.9",
+    "use-wallet": "^0.8.1",
+    "zustand": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.56",
+    "@types/styled-components": "^5.1.5",
+    "cids": "^1.1.5",
+    "ts-node": "^9.1.1"
+  }
+}

@@ -5,14 +5,10 @@
 /**/export/
 /**/keys/
 /**/.env
-/**/public/
+/**/.env.local
 /**/.next/
+/**/cache
+/**/artifacts
+/**/out
 
-# generated contract artifacts/
-sol/erc1155/generated-artifacts/
-sol/erc1155/test/generated-artifacts/
-# generated truffle contract artifacts/
-sol/erc1155/build/
-# generated contract wrappers
-sol/erc1155/generated-wrappers/
-sol/erc1155/test/generated-wrappers/
+.vercel

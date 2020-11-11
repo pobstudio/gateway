@@ -1,13 +1,14 @@
-export type Cord = [number, number];
-
 export type Line = [Cord, Cord];
 
 export type Rect = [Cord, Cord];
 export type Triangle = [Cord, Cord, Cord];
 export type RectByTriangle = [Triangle, Triangle];
+export type RectByCorner = [Cord, Cord, Cord, Cord];
 
 export type Bound = [number, number];
 export type Range = [number, number];
+export type Vec2 = [number, number];
+export type Cord = [number, number];
 
 export type Color = [number, number, number, number];
 

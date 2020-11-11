@@ -33,6 +33,10 @@ export function randomRangeFactory(randFunc: any) {
     randomInArray: (arr: any[]): any => {
       return arr[utils.random(0, arr.length, 'int')];
     },
+    randomInArrayByWeights: (arr: any[], weights: number[]) => {
+      const weightedIndex = utils.randomByWeights(weights);
+      return arr[weightedIndex];
+    },
   };
   return utils;
 }

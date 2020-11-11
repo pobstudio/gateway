@@ -1,4 +1,4 @@
-import {Color} from '../types';
+import { Color } from '../types';
 
 export const convertHexToColor = (hexStr: string): Color => {
   var bigint = parseInt(hexStr.slice(1), 16);
