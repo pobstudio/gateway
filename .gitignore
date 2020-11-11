@@ -1,0 +1,18 @@
+/**/node_modules/
+/**/.DS_Store
+/**/*.log
+/**/lib/
+/**/export/
+/**/keys/
+/**/.env
+/**/public/
+/**/.next/
+
+# generated contract artifacts/
+sol/erc1155/generated-artifacts/
+sol/erc1155/test/generated-artifacts/
+# generated truffle contract artifacts/
+sol/erc1155/build/
+# generated contract wrappers
+sol/erc1155/generated-wrappers/
+sol/erc1155/test/generated-wrappers/

@@ -1,0 +1,23 @@
+{
+  "name": "art.bydavidsun",
+  "version": "1.0.0",
+  "main": "",
+  "repository": "",
+  "author": "<me@bydavidsun.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "sketches"
+  ],
+  "scripts": {
+    "prettier": "prettier --write \"**/*.{ts,tsx,js,json,css,yml,md}\""
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.9.0",
+    "typescript": "^3.8.3",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+  }
+}
