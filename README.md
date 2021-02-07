@@ -15,16 +15,16 @@ In a roundabout way, your artworks are decentralized.
 Current IPFS hash and gateway:
 
 CIDv0:
-`QmSE1Z8RRU2P1RYFRSJ87Y1ZP9PMgR1RVjEaAbKBbErW32`
+`QmcLhLEWSdiHNPSq6tRzCaB3dUYN7FJSc6Eox5KbZ3LZCF`
 
 CIDV1:
-`bafybeibzxnahlim2dvxxudfhriajjijm323gv3gvy7g3zpcws5ky4353ye`
+`bafybeigqa2kstuhkvfzonokpxwh65f2bmhkyxux2lqhzbagdv3um7dmbuq`
 
 Due to the routing architecture of next.js, the base path needs to be the root.
 
 Gateway:
 
-[https://bafybeibzxnahlim2dvxxudfhriajjijm323gv3gvy7g3zpcws5ky4353ye.ipfs.dweb.link/](https://bafybeibzxnahlim2dvxxudfhriajjijm323gv3gvy7g3zpcws5ky4353ye.ipfs.dweb.link/)
+[https://bafybeigqa2kstuhkvfzonokpxwh65f2bmhkyxux2lqhzbagdv3um7dmbuq.ipfs.dweb.link/](https://bafybeigqa2kstuhkvfzonokpxwh65f2bmhkyxux2lqhzbagdv3um7dmbuq.ipfs.dweb.link/)
 
 Generative algorithmn stored in this hash:
 
