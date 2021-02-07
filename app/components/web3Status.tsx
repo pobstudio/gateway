@@ -1,4 +1,3 @@
-import { EDEADLK } from 'constants';
 import { FC } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useModalStore } from '../stores/modal';
@@ -72,7 +71,6 @@ const StyledButton = styled(PrimaryButton)`
 `;
 
 export const Web3Status: FC = () => {
-  const { track } = useAnalytics();
   const { account, connector, error } = useWeb3React();
 
   const toggleIsWalletModalOpen = useModalStore(

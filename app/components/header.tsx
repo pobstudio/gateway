@@ -14,7 +14,6 @@ import { useMemo } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { BREAKPTS } from '../styles';
 import { useWindowSize } from 'react-use';
-import { AudioControls } from './AudioControls';
 import { MenuIcon } from './icons/menu';
 import { CloseIcon } from './icons/close';
 import { ROUTES } from '../constants/routes';
@@ -188,8 +187,7 @@ export const Header: React.FC = () => {
             pointerEvents:
               isCluttered && shouldShowTryYourHash ? 'auto' : 'none',
           }}
-        >
-        </HeaderCenterContentWrapper>
+        ></HeaderCenterContentWrapper>
         <HeaderRightSideContentWrappper
           style={{
             opacity: isCluttered ? 1 : 0,

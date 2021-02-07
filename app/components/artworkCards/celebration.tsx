@@ -7,9 +7,7 @@ import {
   DetailsTextBold,
   DetailsText,
 } from './common';
-import { useAnalytics } from 'use-analytics';
 import { useWeb3React } from '@web3-react/core';
-import { ANALYTIC_EVENTS } from '../../constants/analytics';
 import { useMinter } from '../../hooks/useMinter';
 import { useTokenId } from '../../hooks/useTokenId';
 import { shortenHexString } from '../../utils/hex';
@@ -25,7 +23,6 @@ import { animated } from 'react-spring';
 export const ArtworkCelebrationCard: FC<
   ArtworkCardProps & { isHidden?: boolean }
 > = ({ gene, isRight, isHidden }) => {
-  const { track } = useAnalytics();
   const tokenId = useTokenId(gene.seed);
   const owner = useOwnerByHash(gene.seed);
 
@@ -84,9 +81,6 @@ export const ArtworkCelebrationCard: FC<
           }}
         >
           <DetailsTextAnchor
-            onClick={() => {
-              track(ANALYTIC_EVENTS.CAROUSEL_CARD_CLICK_OPENSEA);
-            }}
             href={!!tokenId ? getOpenSeaUrl(tokenId) : '#'}
             target={'_blank'}
             style={{ fontSize: 14, fontWeight: 'bold', color: 'white' }}
@@ -95,7 +89,6 @@ export const ArtworkCelebrationCard: FC<
           </DetailsTextAnchor>
           <DetailsTextAnchor
             href={`${IPFS_GATEWAY_LINK}`}
-            onClick={() => track(ANALYTIC_EVENTS.CAROUSEL_CARD_CLICK_IPFS)}
             target={'_blank'}
             style={{ fontSize: 14, fontWeight: 'bold', color: 'white' }}
           >

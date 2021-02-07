@@ -7,9 +7,7 @@ import {
   DetailsTextBold,
   DetailsText,
 } from './common';
-import { useAnalytics } from 'use-analytics';
 import { useWeb3React } from '@web3-react/core';
-import { ANALYTIC_EVENTS } from '../../constants/analytics';
 import { useMinter } from '../../hooks/useMinter';
 import { useTokenId } from '../../hooks/useTokenId';
 import { shortenHexString } from '../../utils/hex';
@@ -27,8 +25,6 @@ import { BREAKPTS } from '../../styles';
 import { getContrast } from 'polished';
 
 export const ArtworkColorsCard: FC<ArtworkCardProps> = ({ gene, isRight }) => {
-  const { track } = useAnalytics();
-
   return (
     <AnimatedDetailsContainer
       isRight={isRight}
@@ -62,7 +58,6 @@ const ColorPallete: FC<{ address: string; palette: any }> = ({
   address,
   palette,
 }) => {
-  const { track } = useAnalytics();
   const contractName = useContractName(address);
   return (
     <DetailsContent>
@@ -74,13 +69,7 @@ const ColorPallete: FC<{ address: string; palette: any }> = ({
         }}
       >
         <Link passHref href={`${ROUTES.HASH.PALETTE}/${address}`}>
-          <DetailsTextAnchor
-            onClick={() =>
-              track(ANALYTIC_EVENTS.CAROUSEL_CARD_CLICK_PALLETE, {
-                address,
-              })
-            }
-          >
+          <DetailsTextAnchor>
             {contractName?.slice(0, 18) ?? shortenHexString(address)}
           </DetailsTextAnchor>
         </Link>

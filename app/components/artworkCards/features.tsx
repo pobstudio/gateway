@@ -7,9 +7,7 @@ import {
   DetailsTextBold,
   DetailsText,
 } from './common';
-import { useAnalytics } from 'use-analytics';
 import { useWeb3React } from '@web3-react/core';
-import { ANALYTIC_EVENTS } from '../../constants/analytics';
 import { useMinter } from '../../hooks/useMinter';
 import { useTokenId } from '../../hooks/useTokenId';
 import { shortenHexString } from '../../utils/hex';
@@ -24,8 +22,6 @@ export const ArtworkFeaturesCard: FC<ArtworkCardProps> = ({
   gene,
   isRight,
 }) => {
-  const { track } = useAnalytics();
-
   const attributes = useMemo(() => generateTokenAttributesFromGene(gene), [
     gene,
   ]);
@@ -70,9 +66,6 @@ export const ArtworkFeaturesCard: FC<ArtworkCardProps> = ({
           href={WHAT_IS_ALL_NONSENSE_LINK}
           target={'_blank'}
           style={{ width: 125 }}
-          onClick={() =>
-            track(ANALYTIC_EVENTS.CAROUSEL_CARD_CLICK_WHAT_IS_THIS)
-          }
         >
           What is all this nonsense?
         </DetailsTextAnchor>

@@ -6,12 +6,9 @@ import {
   DetailsContent,
   DetailsText,
 } from './common';
-import { useAnalytics } from 'use-analytics';
 import { SpanBold } from '../text';
-import { ANALYTIC_EVENTS } from '../../constants/analytics';
 
 export const ArtworkTxCard: FC<ArtworkCardProps> = ({ gene, isRight }) => {
-  const { track } = useAnalytics();
   return (
     <AnimatedDetailsContainer isRight={isRight}>
       <DetailsContent>
@@ -21,7 +18,6 @@ export const ArtworkTxCard: FC<ArtworkCardProps> = ({ gene, isRight }) => {
       </DetailsContent>
       <DetailsContent>
         <DetailsTextAnchor
-          onClick={() => track(ANALYTIC_EVENTS.CAROUSEL_CARD_CLICK_HASH)}
           href={`https://etherscan.io/tx/${gene.seed}`}
           target={'_blank'}
         >

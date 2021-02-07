@@ -10,8 +10,8 @@ import { usePobContract, usePobContractV1 } from './useContracts';
 export const useTokenId = (hash: string | undefined) => {
   const transactionMap = useTransactionsStore((s) => s.transactionMap);
   const blockNumber = useBlockchainStore((s) => s.blockNumber);
-  const minter = usePobContract(true);
-  const minterV1 = usePobContractV1(true);
+  const minter = usePobContract();
+  const minterV1 = usePobContractV1();
   const [tokenId, setTokenId] = useState<string | undefined>(undefined);
 
   useEffect(() => {

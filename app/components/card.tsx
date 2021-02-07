@@ -19,6 +19,7 @@ import { useMinter } from '../hooks/useMinter';
 import { fetchPrerenderLocally } from '../utils/api';
 import { useCardStore } from '../stores/card';
 import { useProvider } from '../hooks/useProvider';
+import { TokenLabel } from './tokenLabel';
 
 const LargeCardWrapper = styled.div`
   height: 100%;
@@ -132,7 +133,7 @@ const UnMemoizedLargeCard: FC<LargeCardProps & HTMLProps<HTMLDivElement>> = (
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   const handleHasDrawn = useCallback(() => {
-    setIsImageLoading( false );
+    setIsImageLoading(false);
   }, []);
 
   const isParallax = useMemo(() => {
@@ -140,9 +141,22 @@ const UnMemoizedLargeCard: FC<LargeCardProps & HTMLProps<HTMLDivElement>> = (
   }, [isClutter, isExpanded, cardState]);
 
   const shouldShowWebgl = useMemo(() => {
-    return !!hash && !!prerenderPayload && isMounted() && largeCardDimensions[0] !== 0 && cardState === 'normal'
-  }, [hash, prerenderPayload, isMounted, largeCardDimensions, isParallax, cardState]);
- 
+    return (
+      !!hash &&
+      !!prerenderPayload &&
+      isMounted() &&
+      largeCardDimensions[0] !== 0 &&
+      cardState === 'normal'
+    );
+  }, [
+    hash,
+    prerenderPayload,
+    isMounted,
+    largeCardDimensions,
+    isParallax,
+    cardState,
+  ]);
+
   const webglRef = useRef<HTMLDivElement | null>(null);
 
   const [delta] = useParallaxDelta(
@@ -211,11 +225,10 @@ const UnMemoizedLargeCard: FC<LargeCardProps & HTMLProps<HTMLDivElement>> = (
           isArtFocused={isClutter}
           onClick={handleArtworkClick}
         >
-          {shouldShowWebgl && <WebglDrawer prerenderPayload={prerenderPayload} onHasDrawn={handleHasDrawn} />}
-          {!!hash && (
-            <AnimatedImage
-              src={getArtworkPreviewUrl(hash)}
-              onLoad={() => setIsImageLoading(false)}
+          {shouldShowWebgl && (
+            <WebglDrawer
+              prerenderPayload={prerenderPayload}
+              onHasDrawn={handleHasDrawn}
             />
           )}
           <LoadingCard isLoading={isImageLoading} />
@@ -227,14 +240,15 @@ const UnMemoizedLargeCard: FC<LargeCardProps & HTMLProps<HTMLDivElement>> = (
   );
 };
 
-const UnMemoizedWebglDrawer: FC<{ prerenderPayload: any, onHasDrawn?: () => void }> = ({ onHasDrawn, prerenderPayload }) => {
+const UnMemoizedWebglDrawer: FC<{
+  prerenderPayload: any;
+  onHasDrawn?: () => void;
+}> = ({ onHasDrawn, prerenderPayload }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   // const [hasDrawn, setHasDrawn] = useState(false);
 
   useEffect(() => {
-    if (
-      !canvasRef.current
-    ) {
+    if (!canvasRef.current) {
       return;
     }
 
@@ -268,11 +282,7 @@ const UnMemoizedWebglDrawer: FC<{ prerenderPayload: any, onHasDrawn?: () => void
         gl.getExtension('WEBGL_lose_context')?.loseContext();
       }
     };
-  }, [
-    onHasDrawn,
-    canvasRef,
-    prerenderPayload,
-  ]);
+  }, [onHasDrawn, canvasRef, prerenderPayload]);
 
   // useUnmount(() => {
   //   console.log(canvasRef.current, 'hello');
@@ -283,9 +293,8 @@ const UnMemoizedWebglDrawer: FC<{ prerenderPayload: any, onHasDrawn?: () => void
   //   }
   // });
 
-  return <AnimatedCanvas ref={canvasRef} />
-}
-
+  return <AnimatedCanvas ref={canvasRef} />;
+};
 
 const WebglDrawer = React.memo(UnMemoizedWebglDrawer);
 

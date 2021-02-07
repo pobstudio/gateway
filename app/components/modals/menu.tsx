@@ -11,7 +11,6 @@ import { FlexCenterColumn } from '../flex';
 import { PrimaryAnchor } from '../anchor';
 import { PrimaryButton } from '../button';
 import { ROUTES } from '../../constants/routes';
-import { ANALYTIC_EVENTS } from '../../constants/analytics';
 import { BREAKPTS } from '../../styles';
 
 const MenuContent = styled(FlexCenterColumn)`
@@ -46,10 +45,7 @@ const Title = styled.h3`
 
 export const MenuModal: FC = () => {
   const isOpen = useModalStore((s) => s.isMenuModalOpen);
-  const {
-    setIsWalletModalOpen,
-    setIsMenuModalOpen,
-  } = useModalStore();
+  const { setIsWalletModalOpen, setIsMenuModalOpen } = useModalStore();
   const dismissAllModals = useCallback(() => {
     setIsWalletModalOpen(false);
     setIsMenuModalOpen(false);
@@ -72,9 +68,9 @@ export const MenuModal: FC = () => {
                   <Title>Menu</Title>
                 </div>
                 <div>
-                  <Link href={ROUTES.HASH.GALLERY} passHref={true}>
+                  {/* <Link href={ROUTES.HASH.GALLERY} passHref={true}>
                     <HeaderLink onClick={dismissAllModals}>Gallery</HeaderLink>
-                  </Link>
+                  </Link> */}
                 </div>
               </MenuContent>
             </AnimatedModalContainer>

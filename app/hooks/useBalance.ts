@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useBlockchainStore } from '../stores/blockchain';
 import { useCallback } from 'react';
 export const useBalance = () => {
-  const provider = useProvider(true);
+  const provider = useProvider();
   const { account } = useWeb3React();
   const balance = useBlockchainStore(
     useCallback((s) => s.balanceMap[account ?? ''], [account]),

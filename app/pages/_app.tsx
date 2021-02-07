@@ -2,21 +2,16 @@ import React from 'react';
 import App from 'next/app';
 import { ThemedGlobalStyle } from '../theme';
 import { LocalStorageEffect } from '../effects/LocalStorageEffect';
-import { SearchModal } from '../components/modals/search';
 import { BlockchainEffect } from '../effects/BlockchainEffect';
 import { CHAIN_ID, POB_PROD_LINK } from '../constants';
 import { WalletModal } from '../components/modals/wallet';
 import { EagerConnectEffect } from '../effects/EagerConnectEffect';
 import { TokenStatsEffect } from '../effects/TokenStatsEffect';
 import { TransactionsEffect } from '../effects/TransactionsEffect';
-import { CollectionEffect } from '../effects/CollectionEffect';
-import { useModalStore } from '../stores/modal';
 import { ScrollLockWrapper } from '../components/ScrollLockWrapper';
 import { ToastsEffect } from '../effects/ToastEffect';
 import { Toasts } from '../components/toast';
 import { WalletEffect } from '../effects/WalletEffect';
-import { analytics } from '../analytics';
-import { AnalyticsEffect } from '../effects/AnalyticsEffect';
 import { DefaultSeo } from 'next-seo';
 import { Web3ReactProvider } from '@web3-react/core';
 import {
@@ -82,29 +77,26 @@ export default class PobApp extends App {
           ]}
         />
         <ThemedGlobalStyle />
-          <ScrollLockWrapper>
-            <Web3ReactProvider getLibrary={getLibrary}>
-              {/** Effects are any tasks that strictly only makes state changes to stores */}
-              <LocalStorageEffect />
-              <BlockchainEffect />
-              <EagerConnectEffect />
-              <TokenStatsEffect />
-              <TransactionsEffect />
-              <CollectionEffect />
-              <WalletEffect />
-              <ToastsEffect />
-              <AnalyticsEffect />
-              {/** Modals */}
-              <SearchModal />
-              <WalletModal />
-              <MenuModal />
-              <BlockNumberCornerWrapper>
-                <BlockNumber />
-              </BlockNumberCornerWrapper>
-              {/** Component */}
-              <Component {...modifiedPageProps} />
-            </Web3ReactProvider>
-          </ScrollLockWrapper>
+        <ScrollLockWrapper>
+          <Web3ReactProvider getLibrary={getLibrary}>
+            {/** Effects are any tasks that strictly only makes state changes to stores */}
+            <LocalStorageEffect />
+            <BlockchainEffect />
+            <EagerConnectEffect />
+            <TokenStatsEffect />
+            <TransactionsEffect />
+            <WalletEffect />
+            <ToastsEffect />
+            {/** Modals */}
+            <WalletModal />
+            <MenuModal />
+            <BlockNumberCornerWrapper>
+              <BlockNumber />
+            </BlockNumberCornerWrapper>
+            {/** Component */}
+            <Component {...modifiedPageProps} />
+          </Web3ReactProvider>
+        </ScrollLockWrapper>
       </>
     );
   }

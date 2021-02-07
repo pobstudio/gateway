@@ -38,26 +38,28 @@ The main POB experience:
 
 The POB gateway repo is structured as a monorepo containing many packages that reach all aspects of the POB ecosystem.
 
-| Package                                                        | Description                                                                                   |
-| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`app`](/app)                   | Core next.js webapp of the IPFS gateway, deploy on a server or on IPFS as a statically build. |
-| [`protocol`](/protocol) | Core protocol of POB, contains the ERC1155 token, minter contracts, and other future things. |
+| Package                 | Description                                                                                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| [`app`](/app)           | Core next.js webapp of the IPFS gateway, deploy on a server or on IPFS as a statically build.                        |
+| [`protocol`](/protocol) | Core protocol of POB, contains the ERC1155 token, minter contracts, and other future things.                         |
 | [`sketches`](/sketches) | Core generative algorithmns and means to generate them from a transaction hash. Current contains the $HASH algorithm |
 
 ## Running the IPFS gateway locally
 
-In the root of the directory: 
+In the root of the directory:
 
 ```
 $ yarn install
 ```
 
 Change directory to `app`.
+
 ```
 $ cd /app
 ```
 
 Run
+
 ```
 $ yarn dev
 ```
@@ -68,7 +70,7 @@ Walla! visit `localhost:3000` to see your build running locally!
 
 Node version 10.x is required.
 
-In the root of the directory: 
+In the root of the directory:
 
 ```
 $ yarn install
@@ -77,6 +79,7 @@ $ yarn install
 Each respective package have their own `.env` requirements
 
 `app`
+
 ```
 NEXT_PUBLIC_CHAIN_ID="OPTIONAL"
 NEXT_PUBLIC_FORTMATIC_KEY="OPTIONAL"
@@ -85,18 +88,21 @@ NEXT_PUBLIC_POB_PROD_LINK="OPTIONAL"
 ```
 
 `sketches`
+
 ```
 NETWORK_RPC_URL="OPTIONAL"
 PRIVATE_KEY="OPTIONAL"
 ```
+
 The private key and rpc is used if you want to deploy the algorithmn to the Ethereum blockchain.
 
-
 `protocol`
+
 ```
 RINKEBY_NETWORK_RPC_URL="OPTIONAL"
 RINKEBY_MNEMONIC="OPTIONAL"
 MAINNET_NETWORK_RPC_URL="OPTIONAL"
 MAINNET_PRIVATE_KEY="OPTIONAL"
 ```
+
 Provide either networks corresponding url and key.

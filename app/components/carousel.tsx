@@ -48,6 +48,7 @@ import Link from 'next/link';
 import { ROUTES } from '../constants/routes';
 import { useOwnerByHash } from '../hooks/useOwner';
 import { CarouselStateText } from './carouselStateText';
+import { useProvider } from '../hooks/useProvider';
 
 const BOTTOM_DETAILS_PADDING = 0;
 const CAROUSEL_SIDE_CARDS_OFFSET = 500;
@@ -249,12 +250,14 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   // center card
   const centerHash = useHashFromMaybeHashOrId(lifeCycle[2]?.value);
-
-  const { data: gene, error } = useSWR(
-    useMemo(() => centerHash ?? null, [centerHash]),
+  const provider = useProvider();
+  const { data: prerenderPayload, error } = useSWR(
+    useMemo(() => [provider, centerHash] ?? null, [provider, centerHash]),
     fetchGeneLocally,
     {},
   );
+
+  console.log(prerenderPayload, centerHash);
 
   const isCardHidden = useMemo(() => {
     return (
@@ -387,9 +390,9 @@ export const Carousel: React.FC<CarouselProps> = ({
                 {isExpanded ? 'Minimize' : 'Expand Details'}
               </BottomDetailsButton>
             </AnimatedLargeCardBottomDetailsContainer>
-            {!isMobile && !!lifeCycle[2] && !!gene && (
+            {!isMobile && !!lifeCycle[2] && !!prerenderPayload?.gene && (
               <ArtworkCardsDesktop
-                gene={gene}
+                gene={prerenderPayload.gene}
                 isCardHidden={isCardHidden}
                 isClutter={isClutter}
                 toggleIsExpanded={toggleIsExpanded}
@@ -442,9 +445,9 @@ export const Carousel: React.FC<CarouselProps> = ({
       {!isSingular && (
         <Progress isPaused={isPaused} triggerAtOne={incrementCarouselIndex} />
       )} */}
-      {isMobile && !!lifeCycle[2] && (
+      {isMobile && !!lifeCycle[2] && !!prerenderPayload && (
         <ArtworkCardsMobile
-          gene={gene}
+          gene={prerenderPayload.gene}
           isCardHidden={isCardHidden}
           isClutter={isClutter}
           toggleIsExpanded={toggleIsExpanded}
@@ -617,6 +620,7 @@ const ArtworkCardsDesktop: FC<ArtworkCardsProps> = ({
 }) => {
   const ownerCardState = useShouldShowOwnerStateCard(gene.seed);
 
+  console.log('desk');
   return (
     <>
       <ArtworkCardAbsoluteContainer

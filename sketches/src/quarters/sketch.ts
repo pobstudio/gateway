@@ -22,7 +22,7 @@ export const sketch = (
   const regl = createRegl({ gl });
 
   const { background, foreground, generateQuarters } = gene;
-  
+
   const sketchBounds: Bound = [sketchContext.width, sketchContext.height];
 
   const createEllipseQuartersCommand = () => {

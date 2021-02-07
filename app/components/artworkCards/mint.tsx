@@ -7,9 +7,7 @@ import {
   DetailsTextBold,
   DetailsText,
 } from './common';
-import { useAnalytics } from 'use-analytics';
 import { useWeb3React } from '@web3-react/core';
-import { ANALYTIC_EVENTS } from '../../constants/analytics';
 import { MINTING_SLIPPAGE_COUNT, useMinter } from '../../hooks/useMinter';
 import { useTokenId } from '../../hooks/useTokenId';
 import { shortenHexString } from '../../utils/hex';
@@ -41,7 +39,6 @@ const StyledMintingGraph = styled(MintingGraph)`
 `;
 
 export const ArtworkMintCard: FC<ArtworkCardProps> = ({ gene, isRight }) => {
-  const { track } = useAnalytics();
   const toggleWalletModal = useModalStore((s) => s.toggleIsWalletModalOpen);
 
   const { account } = useWeb3React();
@@ -158,10 +155,8 @@ export const ArtworkMintCard: FC<ArtworkCardProps> = ({ gene, isRight }) => {
           onClick={() => {
             if (!account) {
               toggleWalletModal();
-              track(ANALYTIC_EVENTS.CAROUSEL_CARD_CLICK_MINT);
             } else {
               mintArtwork();
-              track(ANALYTIC_EVENTS.CAROUSEL_CARD_CLICK_CONNECT_WALLET);
             }
           }}
           disabled={!isMintable && !!account}

@@ -8,9 +8,7 @@ import {
   DetailsTextBold,
   DetailsText,
 } from './artworkCards';
-import { useAnalytics } from 'use-analytics';
 import { useWeb3React } from '@web3-react/core';
-import { ANALYTIC_EVENTS } from '../constants/analytics';
 import { useMinter } from '../hooks/useMinter';
 import { useTokenId } from '../hooks/useTokenId';
 import { shortenHexString } from '../utils/hex';

@@ -21,7 +21,7 @@ import { BREAKPTS } from '../../styles';
 import { getEtherscanTxUrl } from '../../utils/urls';
 import { useBalance } from '../../hooks/useBalance';
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core';
-import { injected, walletconnect, } from '../../connectors';
+import { injected } from '../../connectors';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { isMobile } from 'react-device-detect';
@@ -272,8 +272,7 @@ const WalletConnectingContent: FC<{ reset: () => void }> = ({ reset }) => {
 
 const TransactionInProgress: FC<TransactionObject> = ({ hash, metadata }) => {
   return (
-    <TransactionWrapper
-    >
+    <TransactionWrapper>
       <TransactionStatusWrapper>
         <TransactionStatusIconWrapper>
           <LoadingCircle />
@@ -300,8 +299,7 @@ const TransactionInProgress: FC<TransactionObject> = ({ hash, metadata }) => {
 const TransactionSuccess: FC<TransactionObject> = ({ hash, metadata }) => {
   const tokenId = useTokenId(metadata.hash);
   return (
-    <TransactionWrapper
-    >
+    <TransactionWrapper>
       <TransactionStatusWrapper>
         <TransactionStatusIconWrapper>
           <SuccessCircle />
@@ -331,8 +329,7 @@ const TransactionSuccess: FC<TransactionObject> = ({ hash, metadata }) => {
 
 const TransactionFailure: FC<TransactionObject> = ({ hash, metadata }) => {
   return (
-    <TransactionWrapper
-    >
+    <TransactionWrapper>
       <TransactionStatusWrapper>
         <TransactionStatusIconWrapper>
           <FailureCircle />
@@ -424,8 +421,7 @@ const WalletConnectedContent: FC<{ reset: () => void }> = ({ reset }) => {
                 Disconnect
               </ActionButton>
             </ActionsRow>
-            <ActionsRow>
-            </ActionsRow>
+            <ActionsRow></ActionsRow>
           </ActionsRow>
           {txs.length > 0 && (
             <TransactionsWell>
@@ -470,12 +466,12 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     name: 'MetaMask',
     description: 'Connect via Metamask',
   },
-  WALLET_CONNECT: {
-    connector: walletconnect,
-    name: 'WalletConnect',
-    mobile: true,
-    description: 'Connect via WalletConnect',
-  },
+  // WALLET_CONNECT: {
+  //   connector: walletconnect,
+  //   name: 'WalletConnect',
+  //   mobile: true,
+  //   description: 'Connect via WalletConnect',
+  // },
   // WALLET_LINK: {
   //   connector: walletlink,
   //   name: 'Coinbase Wallet',

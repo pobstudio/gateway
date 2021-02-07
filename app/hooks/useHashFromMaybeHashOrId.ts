@@ -23,8 +23,8 @@ export const useHashFromMaybeHashOrId = (hashOrId: string | undefined) => {
     if (!hashOrId) {
       return;
     }
-
     if (TOKEN_TYPES[TOKEN_SYMBOL].slice(0, 34) === hashOrId.slice(0, 34)) {
+      console.log(minterV1);
       minter.tokenIdToTxHash(hashOrId).then((h) => {
         if (h.eq(ZERO)) {
           setHash(hashOrId);
@@ -43,7 +43,7 @@ export const useHashFromMaybeHashOrId = (hashOrId: string | undefined) => {
     } else {
       setHash(hashOrId);
     }
-  }, [hashOrId]);
+  }, [hashOrId, minter, minterV1]);
 
   return hash;
 };

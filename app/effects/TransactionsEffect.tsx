@@ -1,12 +1,12 @@
 import { useEffect, FC } from 'react';
 import { useBlockchainStore } from '../stores/blockchain';
 import { useTransactionsStore } from '../stores/transaction';
-import { useWallet } from 'use-wallet';
+import { useWeb3React } from '@web3-react/core';
 import { useToastsStore } from '../stores/toasts';
 import { useProvider } from '../hooks/useProvider';
 export const TransactionsEffect: FC = () => {
   const blockNumber = useBlockchainStore((s) => s.blockNumber);
-  const { account, chainId } = useWallet();
+  const { account, chainId } = useWeb3React();
   const provider = useProvider();
   const { transactionMap, updateTransactionMap } = useTransactionsStore();
   const addTxToast = useToastsStore((s) => s.addTxToast);

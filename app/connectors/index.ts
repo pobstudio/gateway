@@ -3,7 +3,7 @@ import { InjectedConnector } from '@web3-react/injected-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { WalletLinkConnector } from '@web3-react/walletlink-connector';
 import { PortisConnector } from '@web3-react/portis-connector';
-import { ALCHEMY_KEY, CHAIN_ID } from '../constants';
+import { CHAIN_ID } from '../constants';
 
 // export const network = new NetworkConnector({
 //   urls: { [NETWORK_CHAIN_ID]: NETWORK_URL },
@@ -20,16 +20,16 @@ export const injected = new InjectedConnector({
 });
 
 // mainnet only
-export const walletconnect = new WalletConnectConnector({
-  rpc: {
-    [CHAIN_ID]: `https://eth-${
-      CHAIN_ID === 1 ? 'mainnet' : 'rinkeby'
-    }.alchemyapi.io/v2/${ALCHEMY_KEY}`,
-  },
-  bridge: 'https://bridge.walletconnect.org',
-  qrcode: true,
-  pollingInterval: 15000,
-});
+// export const walletconnect = new WalletConnectConnector({
+//   rpc: {
+//     [CHAIN_ID]: `https://eth-${
+//       CHAIN_ID === 1 ? 'mainnet' : 'rinkeby'
+//     }.alchemyapi.io/v2/${ALCHEMY_KEY}`,
+//   },
+//   bridge: 'https://bridge.walletconnect.org',
+//   qrcode: true,
+//   pollingInterval: 15000,
+// });
 
 // mainnet only
 // export const fortmatic = new FortmaticConnector({

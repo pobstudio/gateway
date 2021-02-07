@@ -1,15 +1,9 @@
 import { Web3Provider } from '@ethersproject/providers';
 import { useMemo } from 'react';
-import { useWallet } from 'use-wallet';
+import { useWeb3React } from '@web3-react/core';
 
 export const useProvider = () => {
-  const { ethereum } = useWallet<any>();
-  const provider = useMemo(() => {
-    if (!ethereum) {
-      return undefined;
-    }
-    return new Web3Provider(ethereum);
-  }, [ethereum]);
+  const { library } = useWeb3React<Web3Provider>();
 
-  return useMemo(() => provider, [provider]);
+  return useMemo(() => library, [library]);
 };

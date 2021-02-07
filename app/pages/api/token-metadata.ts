@@ -10,11 +10,7 @@ import {
 } from '@pob/sketches';
 import { BigNumber } from 'ethers';
 import { NextApiRequest, NextApiResponse } from 'next';
-import {
-  CHAIN_ID,
-  POB_PROD_LINK,
-  ZERO,
-} from '../../constants';
+import { CHAIN_ID, POB_PROD_LINK, ZERO } from '../../constants';
 import { ROUTES } from '../../constants/routes';
 import { shortenHexString, padHexString } from '../../utils/hex';
 import { getEditionFromTokenId } from '../../utils/token';
