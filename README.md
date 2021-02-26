@@ -6,7 +6,7 @@ The open-source IPFS gateway of the POB project. Designed to minimally rely on e
 
 ## Philosophy
 
-POB artworks are not stored in a decentralized artwork, however, the means to create a POB artwork is. The generative algorithmn is stored on-chain and open-sourced and all the metadata to create a POB artwork is stored on the blockchain in the transaction metadata.
+POB artworks are not stored in a decentralized network, however, the means to create a POB artwork is. The generative algorithmn is stored on-chain and open-sourced and all the metadata to create a POB artwork is stored on the blockchain in the transaction metadata.
 
 In a roundabout way, your artworks are decentralized.
 
