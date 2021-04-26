@@ -26,13 +26,17 @@ Gateway:
 
 [https://bafybeigqa2kstuhkvfzonokpxwh65f2bmhkyxux2lqhzbagdv3um7dmbuq.ipfs.dweb.link/](https://bafybeigqa2kstuhkvfzonokpxwh65f2bmhkyxux2lqhzbagdv3um7dmbuq.ipfs.dweb.link/)
 
-Generative algorithmn stored in this hash:
+Generative algorithm for GENESIS stored in this txn:
 
-`0x47285cae75d706408f13e9c4491c3a8cc6e684d4790514c72a4209095522df51`
+`0xcacf896783cb7eced115d5ac9237bc8b1e79c211f755f6c6f150e00a9b1c68ac`
+
+Generative algorithm for SAGA stored in this txn:
+
+`0x238aa5d0f48a45e162c74f814c4116eb77c1957980e54946ec0deca40e5268f7`
 
 The main POB experience:
 
-[pob.studio](https://pob.studio)
+[hash.pob.studio](https://hash.pob.studio)
 
 ## Packages
 
